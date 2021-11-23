@@ -1,0 +1,51 @@
+﻿@model UCPPraktikam1.Models.Transaksi
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Transaksi</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Idtransaksi" class="control-label"></label>
+                <input asp-for="Idtransaksi" class="form-control" />
+                <span asp-validation-for="Idtransaksi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idsapi" class="control-label"></label>
+                <select asp-for="Idsapi" class ="form-control" asp-items="ViewBag.Idsapi"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idpembeli" class="control-label"></label>
+                <select asp-for="Idpembeli" class ="form-control" asp-items="ViewBag.Idpembeli"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jumlahsapi" class="control-label"></label>
+                <input asp-for="Jumlahsapi" class="form-control" />
+                <span asp-validation-for="Jumlahsapi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tgltransaksi" class="control-label"></label>
+                <input asp-for="Tgltransaksi" class="form-control" />
+                <span asp-validation-for="Tgltransaksi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
